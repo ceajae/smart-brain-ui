@@ -6,6 +6,7 @@ import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import Logo from './components/Logo/Logo';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import Rank from './components/Rank/Rank';
+import SignIn from './components/SignIn/SignIn';
 import './App.css';
 
 
@@ -38,7 +39,6 @@ class App extends Component {
     }
 
     calculateFaceLocation = (data)=> {
-        console.log('nnnnn')
         const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
         const image = document.getElementById('inputimage');
         const width = Number( image.width);
@@ -77,6 +77,7 @@ class App extends Component {
                     params={particlesOptions}
                 />
                 <Navigation />
+                <SignIn/>
                 <Logo />
                 <Rank />
                 <ImageLinkForm  
@@ -87,6 +88,6 @@ class App extends Component {
             </div>
         );
     }
-}
+}  
 
 export default App;
